@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Acompanhar denúncia · Canal Seguro</title><link rel="stylesheet" href="css/estilos.css"><script src="js/app.js" defer></script></head>
+<body data-pagina="acompanhar">
+  <a class="pular-conteudo" href="#conteudo">Ir para o conteúdo</a><div class="aviso-prototipo" role="note"><strong>Protótipo acadêmico:</strong> os dados existem apenas neste navegador.</div>
+  <header class="cabecalho"><div class="limite cabecalho__linha"><a class="marca" href="index.html"><span class="marca__sinal" aria-hidden="true">CS</span><span><strong>Canal Seguro</strong><small>Itapetininga · ambiente demonstrativo</small></span></a><nav class="navegacao" aria-label="Navegação principal"><a href="denunciar.html">Registrar denúncia</a><a aria-current="page" href="acompanhar.html">Acompanhar</a></nav></div></header>
+  <main id="conteudo" class="pagina-interna"><div class="limite limite--formulario">
+    <nav class="migalhas" aria-label="Navegação estrutural"><a href="index.html">Início</a><span aria-hidden="true">/</span><span>Acompanhar</span></nav>
+    <header class="titulo-pagina"><p class="sobretitulo">Consulta protegida</p><h1>Acompanhar denúncia</h1><p>Informe os dois dados recebidos no registro. O protocolo sozinho não libera a consulta.</p></header>
+    <form id="form-acompanhar" class="formulario-consulta" novalidate>
+      <div class="campo"><label for="consulta-protocolo">Protocolo</label><input id="consulta-protocolo" name="protocolo" required autocomplete="off" placeholder="ITP-2026-XXXXXX"></div>
+      <div class="campo"><label for="consulta-codigo">Código de acesso</label><input id="consulta-codigo" name="codigo" required autocomplete="off" placeholder="XXXX-XXXX-XXXX"></div>
+      <button class="botao botao--primario" type="submit">Consultar</button>
+      <p class="erro-geral" id="erro-consulta" role="alert"></p>
+    </form>
+    <p class="nota-seguranca">Não compartilhe o código de acesso. Nesta demonstração ele não representa segurança real.</p>
+    <section id="resultado-acompanhamento" class="resultado-acompanhamento" hidden tabindex="-1">
+      <header class="cabecalho-resultado"><div><p class="sobretitulo">Protocolo <span id="resultado-protocolo"></span></p><h2 id="resultado-titulo"></h2></div><span class="etiqueta-status" id="resultado-status"></span></header>
+      <dl class="dados-em-linha"><div><dt>Categoria</dt><dd id="resultado-categoria"></dd></div><div><dt>Registrada em</dt><dd id="resultado-data"></dd></div><div><dt>Última atualização</dt><dd id="resultado-atualizacao"></dd></div></dl>
+      <div class="conteudo-relato"><h3>Resumo do relato</h3><p id="resultado-descricao"></p></div>
+      <div class="resposta-publica"><h3>Resposta da delegacia</h3><p id="resultado-resposta"></p></div>
+      <div><h3>Histórico</h3><ol class="linha-tempo" id="resultado-historico"></ol></div>
+    </section>
+  </div></main>
+  <footer class="rodape"><div class="limite rodape__linha"><div><strong>Canal Seguro Itapetininga</strong><p>Projeto acadêmico sem vínculo com órgãos oficiais.</p></div><a href="admin.html">Acesso da delegacia</a></div></footer>
+</body></html>

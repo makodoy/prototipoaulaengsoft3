@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Acesso administrativo · Canal Seguro</title><link rel="stylesheet" href="css/estilos.css"><script src="js/app.js" defer></script></head>
+<body data-pagina="admin-login" class="area-admin">
+  <a class="pular-conteudo" href="#conteudo">Ir para o conteúdo</a><div class="aviso-prototipo" role="note"><strong>Ambiente demonstrativo:</strong> esta autenticação não oferece segurança real.</div>
+  <header class="cabecalho cabecalho--admin"><div class="limite cabecalho__linha"><a class="marca" href="index.html"><span class="marca__sinal" aria-hidden="true">CS</span><span><strong>Canal Seguro</strong><small>Área administrativa · demonstração</small></span></a><a class="link-claro" href="index.html">Voltar ao site</a></div></header>
+  <main id="conteudo" class="pagina-interna"><div class="limite limite--estreito">
+    <header class="titulo-pagina"><p class="sobretitulo">Acesso restrito demonstrativo</p><h1>Área da delegacia</h1><p>Use as credenciais de apresentação para acessar o painel.</p></header>
+    <div class="alerta"><strong>Não use credenciais reais.</strong> O login é validado no próprio JavaScript e serve apenas para demonstrar o fluxo.</div>
+    <form id="form-login" class="formulario-login" novalidate>
+      <div class="campo"><label for="usuario-admin">Usuário</label><input id="usuario-admin" name="usuario" required autocomplete="username"></div>
+      <div class="campo"><label for="senha-admin">Senha</label><input type="password" id="senha-admin" name="senha" required autocomplete="current-password"></div>
+      <button class="botao botao--primario botao--largo" type="submit">Entrar no painel</button><p class="erro-geral" id="erro-login" role="alert"></p>
+    </form>
+    <div class="credenciais-demo"><h2>Credenciais de demonstração</h2><p><strong>Usuário:</strong> operador.demo</p><p><strong>Senha:</strong> Itapetininga2026!</p></div>
+  </div></main>
+  <footer class="rodape"><div class="limite rodape__linha"><div><strong>Canal Seguro Itapetininga</strong><p>Projeto acadêmico sem vínculo com órgãos oficiais.</p></div></div></footer>
+</body></html>

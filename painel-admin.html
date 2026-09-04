@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Painel administrativo · Canal Seguro</title><link rel="stylesheet" href="css/estilos.css"><script src="js/app.js" defer></script></head>
+<body data-pagina="painel-admin" class="area-admin">
+  <a class="pular-conteudo" href="#conteudo">Ir para o conteúdo</a><div class="aviso-prototipo" role="note"><strong>Ambiente demonstrativo:</strong> dados armazenados localmente e autenticação simulada.</div>
+  <header class="cabecalho cabecalho--admin"><div class="limite cabecalho__linha"><a class="marca" href="painel-admin.html"><span class="marca__sinal" aria-hidden="true">CS</span><span><strong>Canal Seguro</strong><small>Área administrativa · demonstração</small></span></a><div class="acoes-cabecalho"><span>Operador demonstrativo</span><button class="botao-link link-claro" type="button" data-sair>Sair</button></div></div></header>
+  <main id="conteudo" class="pagina-interna"><div class="limite">
+    <header class="titulo-pagina titulo-pagina--linha"><div><p class="sobretitulo">Visão operacional</p><h1>Painel de denúncias</h1><p id="data-painel"></p></div><button class="botao botao--secundario" id="restaurar-dados" type="button">Restaurar dados de demonstração</button></header>
+    <section class="indicadores" aria-label="Indicadores gerais"><div><span>Total</span><strong id="indicador-total">0</strong></div><div><span>Recebidas</span><strong id="indicador-recebidas">0</strong></div><div><span>Em andamento</span><strong id="indicador-andamento">0</strong></div><div><span>Risco imediato</span><strong id="indicador-risco">0</strong></div><div><span>Concluídas</span><strong id="indicador-concluidas">0</strong></div></section>
+    <section class="distribuicao" aria-labelledby="titulo-distribuicao"><div><p class="sobretitulo">Panorama</p><h2 id="titulo-distribuicao">Distribuição por categoria</h2></div><div class="barras-categorias" id="barras-categorias"></div></section>
+    <section class="secao-tabela" aria-labelledby="titulo-lista">
+      <div class="cabecalho-secao cabecalho-secao--linha"><div><p class="sobretitulo">Registros</p><h2 id="titulo-lista">Denúncias recebidas</h2></div><span id="quantidade-filtrada"></span></div>
+      <form class="filtros" id="form-filtros">
+        <div class="campo campo--busca"><label for="filtro-busca">Buscar</label><input type="search" id="filtro-busca" placeholder="Protocolo, categoria, bairro ou texto"></div>
+        <div class="campo"><label for="filtro-status">Status</label><select id="filtro-status"><option value="">Todos</option><option>Recebida</option><option>Em triagem</option><option>Em análise</option><option>Encaminhada</option><option>Aguardando informações</option><option>Concluída</option><option>Arquivada</option></select></div>
+        <div class="campo"><label for="filtro-categoria">Categoria</label><select id="filtro-categoria"><option value="">Todas</option></select></div>
+        <div class="campo"><label for="filtro-periodo">Período</label><select id="filtro-periodo"><option value="">Todo o período</option><option value="7">Últimos 7 dias</option><option value="30">Últimos 30 dias</option></select></div>
+        <div class="campo"><label for="filtro-ordem">Ordenar</label><select id="filtro-ordem"><option value="recentes">Mais recentes</option><option value="antigas">Mais antigas</option><option value="prioridade">Maior prioridade</option></select></div>
+      </form>
+      <div class="tabela-responsiva"><table><thead><tr><th>Protocolo</th><th>Ocorrência</th><th>Local</th><th>Registro</th><th>Prioridade</th><th>Status</th><th><span class="sr-only">Ações</span></th></tr></thead><tbody id="tabela-denuncias"></tbody></table></div>
+      <div class="estado-vazio" id="estado-vazio" hidden><h3>Nenhuma denúncia encontrada</h3><p>Revise os filtros ou restaure os dados demonstrativos.</p></div>
+    </section>
+  </div></main>
+  <footer class="rodape"><div class="limite rodape__linha"><div><strong>Canal Seguro Itapetininga</strong><p>Área administrativa de demonstração.</p></div></div></footer>
+</body></html>

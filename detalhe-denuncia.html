@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Detalhe da denúncia · Canal Seguro</title><link rel="stylesheet" href="css/estilos.css"><script src="js/app.js" defer></script></head>
+<body data-pagina="detalhe-admin" class="area-admin">
+  <a class="pular-conteudo" href="#conteudo">Ir para o conteúdo</a><div class="aviso-prototipo" role="note"><strong>Ambiente demonstrativo:</strong> dados armazenados localmente e autenticação simulada.</div>
+  <header class="cabecalho cabecalho--admin"><div class="limite cabecalho__linha"><a class="marca" href="painel-admin.html"><span class="marca__sinal" aria-hidden="true">CS</span><span><strong>Canal Seguro</strong><small>Área administrativa · demonstração</small></span></a><div class="acoes-cabecalho"><span>Operador demonstrativo</span><button class="botao-link link-claro" type="button" data-sair>Sair</button></div></div></header>
+  <main id="conteudo" class="pagina-interna"><div class="limite">
+    <nav class="migalhas" aria-label="Navegação estrutural"><a id="voltar-painel" href="painel-admin.html">Painel de denúncias</a><span aria-hidden="true">/</span><span>Detalhe</span></nav>
+    <div id="detalhe-nao-encontrado" class="estado-vazio" hidden><h1>Denúncia não encontrada</h1><p>O registro solicitado não existe neste navegador.</p><a class="botao botao--primario" href="painel-admin.html">Voltar ao painel</a></div>
+    <div id="conteudo-detalhe" hidden>
+      <header class="cabecalho-detalhe"><div><p class="sobretitulo">Protocolo <span id="detalhe-protocolo"></span></p><h1 id="detalhe-titulo"></h1><p id="detalhe-categoria"></p></div><div class="acoes-detalhe"><span class="etiqueta-status" id="detalhe-status"></span><button class="botao botao--secundario" id="copiar-protocolo" type="button">Copiar protocolo</button></div></header>
+      <div class="grade-detalhe">
+        <div class="coluna-relato">
+          <section class="secao-detalhe"><h2>Dados da ocorrência</h2><dl class="lista-dados" id="dados-ocorrencia"></dl></section>
+          <section class="secao-detalhe"><h2>Relato</h2><div class="texto-relato"><h3>Descrição</h3><p id="detalhe-descricao"></p><h3>Características</h3><p id="detalhe-caracteristicas"></p><h3>Informações complementares</h3><p id="detalhe-complemento"></p></div></section>
+          <section class="secao-detalhe"><h2>Histórico de atualizações</h2><ol class="linha-tempo" id="detalhe-historico"></ol></section>
+        </div>
+        <aside class="coluna-operacao">
+          <form id="form-operacao">
+            <p class="sobretitulo">Operação</p><h2>Atualizar denúncia</h2>
+            <div class="campo"><label for="novo-status">Status</label><select id="novo-status"><option>Recebida</option><option>Em triagem</option><option>Em análise</option><option>Encaminhada</option><option>Aguardando informações</option><option>Concluída</option><option>Arquivada</option></select></div>
+            <div class="campo"><label for="nova-prioridade">Prioridade</label><select id="nova-prioridade"><option>Baixa</option><option>Média</option><option>Alta</option><option>Urgente</option></select></div>
+            <div class="campo"><label for="resposta-publica-admin">Resposta para o denunciante</label><textarea id="resposta-publica-admin" rows="5" maxlength="800"></textarea><p class="ajuda-campo">Esta mensagem ficará visível na consulta pública.</p></div>
+            <div class="campo"><label for="nota-interna-admin">Nova nota interna</label><textarea id="nota-interna-admin" rows="4" maxlength="500"></textarea><p class="ajuda-campo">Nunca é exibida ao denunciante.</p></div>
+            <button class="botao botao--primario botao--largo" type="submit">Salvar atualização</button><button class="botao botao--perigo botao--largo" id="arquivar-denuncia" type="button">Arquivar denúncia</button><p class="mensagem-acao" id="mensagem-operacao" aria-live="polite"></p>
+          </form>
+          <section class="notas-internas"><h2>Notas internas</h2><ul id="lista-notas-internas"></ul></section>
+        </aside>
+      </div>
+    </div>
+  </div></main>
+  <footer class="rodape"><div class="limite rodape__linha"><div><strong>Canal Seguro Itapetininga</strong><p>Área administrativa de demonstração.</p></div></div></footer>
+</body></html>

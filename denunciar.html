@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Registrar denúncia · Canal Seguro</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body data-pagina="denunciar">
+  <a class="pular-conteudo" href="#conteudo">Ir para o conteúdo</a>
+  <div class="aviso-prototipo" role="note"><strong>Protótipo acadêmico:</strong> não envie denúncias reais nem dados pessoais.</div>
+  <header class="cabecalho"><div class="limite cabecalho__linha">
+    <a class="marca" href="index.html"><span class="marca__sinal" aria-hidden="true">CS</span><span><strong>Canal Seguro</strong><small>Itapetininga · ambiente demonstrativo</small></span></a>
+    <nav class="navegacao" aria-label="Navegação principal"><a aria-current="page" href="denunciar.html">Registrar denúncia</a><a href="acompanhar.html">Acompanhar</a></nav>
+  </div></header>
+
+  <main id="conteudo" class="pagina-interna">
+    <div class="limite limite--formulario">
+      <nav class="migalhas" aria-label="Navegação estrutural"><a href="index.html">Início</a><span aria-hidden="true">/</span><span>Registrar denúncia</span></nav>
+      <header class="titulo-pagina"><p class="sobretitulo">Relato anônimo</p><h1>Registrar denúncia</h1><p>Campos marcados com <span aria-hidden="true">*</span><span class="sr-only">asterisco</span> são obrigatórios. Não informe dados pessoais desnecessários.</p></header>
+
+      <div class="barra-etapas" aria-label="Etapas do formulário">
+        <span class="ativo" data-indicador="1">1. Ocorrência</span><span data-indicador="2">2. Detalhes</span><span data-indicador="3">3. Revisão</span>
+      </div>
+
+      <form id="form-denuncia" novalidate>
+        <div class="honeypot" aria-hidden="true"><label for="website">Não preencha este campo</label><input id="website" name="website" tabindex="-1" autocomplete="off"></div>
+
+        <section class="etapa-formulario ativa" data-etapa="1" aria-labelledby="etapa-1-titulo">
+          <div class="cabecalho-formulario"><span>Etapa 1 de 3</span><h2 id="etapa-1-titulo">Sobre a ocorrência</h2></div>
+          <div class="campo"><label for="categoria">Categoria <span aria-hidden="true">*</span></label><select id="categoria" name="categoria" required><option value="">Selecione</option><option>Tráfico de drogas</option><option>Violência doméstica</option><option>Furto ou roubo</option><option>Perturbação do sossego</option><option>Maus-tratos</option><option>Crime ambiental</option><option>Atividade suspeita</option><option>Outro</option></select><p class="erro-campo" id="erro-categoria"></p></div>
+          <div class="campo"><label for="titulo">Título ou resumo <span aria-hidden="true">*</span></label><input id="titulo" name="titulo" maxlength="100" required placeholder="Ex.: movimentação suspeita durante a madrugada"><div class="ajuda-campo"><span>Resuma o fato em uma frase.</span><span data-contador="titulo">0/100</span></div><p class="erro-campo" id="erro-titulo"></p></div>
+          <div class="campo"><label for="descricao">Descrição detalhada <span aria-hidden="true">*</span></label><textarea id="descricao" name="descricao" rows="7" minlength="30" maxlength="1500" required placeholder="Conte o que aconteceu de forma objetiva..."></textarea><div class="ajuda-campo"><span>Mínimo de 30 caracteres.</span><span data-contador="descricao">0/1500</span></div><p class="erro-campo" id="erro-descricao"></p></div>
+          <fieldset class="campo"><legend>Há risco imediato para alguém? <span aria-hidden="true">*</span></legend><div class="opcoes-linha"><label><input type="radio" name="risco" value="Sim" required> Sim</label><label><input type="radio" name="risco" value="Não"> Não</label><label><input type="radio" name="risco" value="Não sei informar"> Não sei informar</label></div><p class="erro-campo" id="erro-risco"></p></fieldset>
+          <div class="alerta alerta--emergencia" id="alerta-risco" hidden><strong>Se há perigo acontecendo agora, ligue 190.</strong> Este protótipo não é monitorado.</div>
+          <div class="acoes-formulario"><a class="botao botao--texto" href="index.html">Cancelar</a><button class="botao botao--primario" type="button" data-proxima="2">Continuar</button></div>
+        </section>
+
+        <section class="etapa-formulario" data-etapa="2" aria-labelledby="etapa-2-titulo" hidden>
+          <div class="cabecalho-formulario"><span>Etapa 2 de 3</span><h2 id="etapa-2-titulo">Quando e onde</h2></div>
+          <div class="grade-campos"><div class="campo"><label for="data-fato">Data aproximada</label><input type="date" id="data-fato" name="dataFato"></div><div class="campo"><label for="hora-fato">Horário aproximado</label><input type="time" id="hora-fato" name="horaFato"></div></div>
+          <div class="campo"><label for="bairro">Bairro <span aria-hidden="true">*</span></label><input id="bairro" name="bairro" maxlength="80" required><p class="erro-campo" id="erro-bairro"></p></div>
+          <div class="campo"><label for="referencia">Endereço ou ponto de referência <span aria-hidden="true">*</span></label><input id="referencia" name="referencia" maxlength="160" required placeholder="Não é necessário informar número exato"><p class="erro-campo" id="erro-referencia"></p></div>
+          <div class="campo"><label for="caracteristicas">Pessoas, veículos ou locais envolvidos</label><textarea id="caracteristicas" name="caracteristicas" rows="4" maxlength="600"></textarea><div class="ajuda-campo"><span>Informe somente o que observou.</span><span data-contador="caracteristicas">0/600</span></div></div>
+          <div class="campo"><label for="complemento">Informações complementares</label><textarea id="complemento" name="complemento" rows="4" maxlength="600"></textarea><div class="ajuda-campo"><span>Campo opcional.</span><span data-contador="complemento">0/600</span></div></div>
+          <div class="campo"><label for="contato">Meio de contato <span class="rotulo-opcional">opcional</span></label><input id="contato" name="contato" maxlength="120" autocomplete="off"><p class="ajuda-campo">Informe somente se aceitar um possível retorno. Isso reduz seu anonimato.</p></div>
+          <div class="acoes-formulario"><button class="botao botao--secundario" type="button" data-anterior="1">Voltar</button><button class="botao botao--primario" type="button" data-proxima="3">Revisar denúncia</button></div>
+        </section>
+
+        <section class="etapa-formulario" data-etapa="3" aria-labelledby="etapa-3-titulo" hidden>
+          <div class="cabecalho-formulario"><span>Etapa 3 de 3</span><h2 id="etapa-3-titulo">Revise antes de enviar</h2></div>
+          <dl class="resumo-denuncia" id="resumo-formulario"></dl>
+          <fieldset class="campo bloco-confirmacao"><legend>Confirmações</legend><label class="opcao-check"><input type="checkbox" id="confirmacao" required><span>Declaro que o relato foi feito de boa-fé e que as informações representam o que sei sobre o fato.</span></label><p class="erro-campo" id="erro-confirmacao"></p></fieldset>
+          <div class="campo confirmacao-humana"><label for="resposta-antispam">Confirmação humana: quanto é <strong id="pergunta-antispam"></strong>? <span aria-hidden="true">*</span></label><input type="number" inputmode="numeric" id="resposta-antispam" required><p class="ajuda-campo">Barreira demonstrativa. Em produção, seria necessária validação no servidor.</p><p class="erro-campo" id="erro-antispam"></p></div>
+          <div class="acoes-formulario"><button class="botao botao--secundario" type="button" data-anterior="2">Voltar e editar</button><button class="botao botao--primario" type="submit">Enviar denúncia</button></div>
+        </section>
+      </form>
+
+      <section class="confirmacao-envio" id="confirmacao-envio" hidden aria-live="polite" tabindex="-1">
+        <p class="sobretitulo">Registro concluído</p><h2>Guarde seus dados de acesso</h2><p>A denúncia foi salva neste navegador. O código não será mostrado novamente ao sair desta tela.</p>
+        <div class="credenciais-protocolo"><div><span>Protocolo</span><strong id="protocolo-gerado"></strong></div><div><span>Código de acesso</span><strong id="codigo-gerado"></strong></div></div>
+        <div class="alerta"><strong>Esta é uma simulação.</strong> O armazenamento local não protege informações sensíveis e pode ser lido por quem tiver acesso ao navegador.</div>
+        <div class="grupo-acoes"><button class="botao botao--secundario" type="button" id="copiar-acesso">Copiar dados</button><button class="botao botao--secundario" type="button" id="imprimir-acesso">Imprimir</button><a class="botao botao--primario" href="acompanhar.html">Acompanhar agora</a></div>
+        <p class="mensagem-acao" id="mensagem-copia" aria-live="polite"></p>
+      </section>
+    </div>
+  </main>
+  <footer class="rodape"><div class="limite rodape__linha"><div><strong>Canal Seguro Itapetininga</strong><p>Projeto acadêmico sem vínculo com órgãos oficiais.</p></div><a href="admin.html">Acesso da delegacia</a></div></footer>
+</body>
+</html>
